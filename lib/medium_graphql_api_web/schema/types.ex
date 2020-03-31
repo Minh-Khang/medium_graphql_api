@@ -1,10 +1,10 @@
 defmodule MediumGraphqlApiWeb.Schema.Types do
   use Absinthe.Schema.Notation
 
-  alias MediumGraphqlApiWeb.Schema.Types
+  alias MediumGraphqlApiWeb.Schema
 
-  import_types(Types.UserType)
-  import_types(Types.SessionType)
-  import_types(Types.PostType)
-  import_types(Types.CommentType)
+  import_types(Schema.UserType)
+  import_types(Schema.SessionType)
+  import_types(Schema.PostType)
+  import_types(Schema.CommentType)
 end

@@ -2,6 +2,9 @@ defmodule MediumGraphqlApi.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias MediumGraphqlApi.Blog.Post
+  alias MediumGraphqlApi.Blog.Comment
+
   schema "users" do
     field :email, :string, unique: true
     field :first_name, :string
@@ -10,6 +13,9 @@ defmodule MediumGraphqlApi.Accounts.User do
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
     field :role, :string, default: "user"
+
+    has_many :posts, Post
+    has_many :comments, Comment
 
     timestamps()
   end
